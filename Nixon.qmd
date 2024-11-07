@@ -47,7 +47,6 @@ esta es una formula cualquiera $$k=\frac{\left(2x-1\right)^2-1}{4}"$$
 4.  Hacer push al repositorio
 5.  Activar GitHub Pages
 
-
 # Modelo lineal
 
 ## Importar data xlsx
@@ -81,4 +80,27 @@ ggplot(data_de_tesis_prof, aes(x = factor(geno), y = lfa, fill = factor(riego)))
   labs(x = "Genotipo", y = "LFA (Respuesta)", fill = "Riego") +
   theme_minimal() +
   ggtitle("Boxplot de LFA por Genotipo y Tratamiento de Riego")
+
+```
+
+# Comparacion de medias
+
+```{r}
+library(agricolae)
+
+# Si el ANOVA indica diferencias significativas, procedemos con la comparación de medias
+# Comparación de medias con Tukey para el efecto de 'geno'
+tukey_geno <- HSD.test(modelo, "geno", group = TRUE)
+print(tukey_geno)
+
+# Comparación de medias con Tukey para el efecto de 'riego'
+tukey_riego <- HSD.test(modelo, "riego", group = TRUE)
+print(tukey_riego)
+
+# Comparación de medias con Tukey para la interacción 'riego:geno'
+tukey_interaccion <- HSD.test(modelo, c ("riego", "geno"), group = TRUE)
+print(tukey_interaccion)
+
+
+
 ```
