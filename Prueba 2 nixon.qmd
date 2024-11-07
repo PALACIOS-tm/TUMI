@@ -1,20 +1,20 @@
 ---
-title: "Paf 2 PRUEBA"
+title: "PAGINA 2 PRUEBA"
 author: "Nixon"
 format: html
 editor: visual
- toc: true
-    toc-location: left
-    number-sections: true
-    embed_resources: true
-    output-file: index
+toc: true
+toc-location: left
+number-sections: true
+embed_resources: true
+output-file: index
 ---
 
-## Quarto
+# 1. Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-## Running Code
+## 1.1. Running Code
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
@@ -31,4 +31,60 @@ You can add options to executable code like this
 
 The `echo: false` option disables the printing of code (only output is displayed).
 
+# 2. ¿Como usar quarto?
 
+## 2.1. Fuentes
+
+-   negrita: *esto es fuente negrita*
+-   cursiva: *solanum tuberosum*
+
+## 2.2. Formulas matematicas
+
+Area de una circunferencia $Area_{circunferencia}=pi.r^2$
+
+esta es una formula cualquiera $$k=\frac{\left(2x-1\right)^2-1}{4}"$$
+
+# 3. Mi primera pagina web
+
+1.  Tener mi proyecto
+2.  Conectar mi proyecto a GitHub
+3.  Tener un archivo en formato html llamado 'index.html'
+4.  Hacer push al repositorio
+5.  Activar GitHub Pages
+
+# 4. Modelos lineales 
+
+## 4.1. Datos importados
+
+#Importar data xlsx
+
+```{r}
+library(openxlsx)
+Data1 <- openxlsx::read.xlsx("LA MOLINA 2014 POTATO WUE (FB).xlsx", sheet = "fb")
+```
+
+## 4.2. Modelo lineal lfa
+
+```{r}
+modelo <- lm(formula = lfa ~ bloque + geno + riego + riego*geno, data = Data1)
+
+anova(modelo)
+```
+
+## 4.3. Modelo lineal de hi
+
+```{r}
+modelo <- lm(formula = hi ~ bloque + geno + riego + riego*geno, data = Data1)
+
+anova(modelo)
+```
+
+## 4.4. Modelos lineales mixtos: lfa y hi
+
+# 5. Comparacion de medias 
+
+# 6. Prueba de Tukey
+
+# 7. Analisis multivariado
+
+#  
